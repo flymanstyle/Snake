@@ -11,6 +11,7 @@ import Snake.Snake;
 import java.awt.*;
 import java.awt.List;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import java.util.*;
 
 import static Snake.Constants.*;
@@ -150,6 +151,9 @@ public class MainScene extends Scene {
 
 
     private void drawSnake(Graphics2D g) {
+        BufferedImage image = new BufferedImage(2,2,BufferedImage.TYPE_INT_RGB);
+        Graphics2D g2 = image.createGraphics();
+
         g.setColor(Color.red);
         for (BodyPart bodyPart : snake.getBody()) {
             g.fillRect(
